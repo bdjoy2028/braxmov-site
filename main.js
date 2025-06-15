@@ -1,4 +1,4 @@
-var typed= new Typed(".text", {strings:["Brand Storyteller" , "Content Creator" , "Video Editor"],
+var typed= new Typed(".text", {strings:["Remote Creative Director" , "Creative Strategist" , "Brand Storyteller"],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
