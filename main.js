@@ -1,4 +1,4 @@
-var typed= new Typed(".text", {strings:["Clarity Content Strategist & Producer" , "Explainer Content Strategist" , "Technical Storytelling Specialist"],
+var typed= new Typed(".text", {strings:["Digital Content Consultant" , "Digital Media Advisor" , "Strategic Content Consultant"],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
