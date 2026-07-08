@@ -118,7 +118,7 @@ body
     text-align: center;
     padding: 0;
     margin: 0;
-    gap: 15px;
+    gap: 8px;
     z-index: 9998;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -159,7 +159,12 @@ body
 }
 .logo-ring, .navbar-logo-ring {
     height: 45px;
+    width: 45px;
     margin-bottom: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .logo-ring img {
     height: 100%;
