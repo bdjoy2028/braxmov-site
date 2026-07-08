@@ -17,7 +17,7 @@ body
     width: 100%;
     padding: 30px 60px;
     background: transparent;
-    background-color: #000000;
+    background-color: #e8e6e1;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
@@ -88,15 +88,15 @@ body
     animation-delay: calc(.2s * var(--i));
 }
 .hamburger {
-    display: block;
+    display: none;
     cursor: pointer;
-    background: transparent;
+    background: none;
     border: none;
     padding: 10px;
     z-index: 100000;
 }
 .hamburger .bar {
-    display: block;
+    display: none;
     width: 25px;
     height: 3px;
     margin: 5px auto;
