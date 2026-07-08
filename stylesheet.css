@@ -109,7 +109,7 @@ body
     }
 .navbar {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     position: fixed;
     top: 80px;
     left: 0;
