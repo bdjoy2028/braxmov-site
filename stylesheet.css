@@ -113,6 +113,20 @@ body
 .navbar.active{
     display: flex;
 }
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    z-index: 1000;
+}
+.hamburger{
+    display: block;
+    z-index: 1000;
+}
 }
 .navbar a:hover {
     color: #4b1e1e;
