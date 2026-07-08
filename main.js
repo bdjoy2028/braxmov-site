@@ -25,3 +25,10 @@ document.querySelector(".contact-form").addEventListener("submit", function (e) 
         }
     });
 });
+
+const hamburgerbtn = document.getElementById('hamburger-btn');
+const navbarlinks = document.querySelector('.navbar');
+
+hamburgerBtn.addEventListener('click', () => {
+    navbarLinks.classList.toggle('active');
+});

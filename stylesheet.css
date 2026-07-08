@@ -80,6 +80,40 @@ body
     animation: textGlow 4s ease-in-out infinite, slideTop .5s ease forwards;
     animation-delay: calc(.2s * var(--i));
 }
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #ffffff;
+    transition: all 0.3s ease-in-out;
+}
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+.navbar {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    text-align: center;
+    padding: 20px 0;
+    gap: 20px;
+}
+.navbar.active{
+    display: flex;
+}
+}
 .navbar a:hover {
     color: #4b1e1e;
 }
