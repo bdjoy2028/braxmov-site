@@ -17,7 +17,7 @@ body
     width: 100%;
     padding: 30px 60px;
     background: transparent;
-    background-color: #e8e6e1;
+    background-color: #000000;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
@@ -105,10 +105,10 @@ body
 }
 @media (max-width: 768px) {
     .hamburger {
-        display: block;
+        display: none;
     }
 .navbar {
-    display: none;
+    display: flex;
     flex-direction: column;
     position: fixed;
     top: 80px;
@@ -137,7 +137,7 @@ body
     z-index: 9999;
 }
 .hamburger{
-    display: block;
+    display: none;
     z-index: 1000;
 }
 .logo-ring, .navbar-logo-ring {
