@@ -1,4 +1,4 @@
-var typed= new Typed(".text", {strings:["BLENDING IN" , "WASTING REVENUE" , "SABOTAGING MILLIONAIRE MOMENTUM"],
+var typed= new Typed(".text", {strings:["BLENDING IN" , "WASTING REVENUE" , "PREVENTING EXPANSION"],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
