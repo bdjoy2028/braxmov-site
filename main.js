@@ -1,4 +1,4 @@
-var typed= new Typed(".text", {strings:["Digital Content Consultant" , "Digital Media Advisor" , "Strategic Content Consultant"],
+var typed= new Typed(".text", {strings:["BLENDING IN" , "WASTING REVENUE" , "PROHIBITING A MULTI-MILLION DOLLAR BUSINESS"],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
