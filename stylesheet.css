@@ -173,11 +173,17 @@ body
     object-fit: contain;
 }
 .hero-container {
-    padding-top: 100px;
+    padding-top: 140px;
+}
+.home-content {
+    max-width : 100%;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 .home-content h3 {
     color: #e8e6e1;
-    font-size: 22px;
+    font-size: 18px;
     font-weight:700;
     animation: slideBottom 1s ease forwards;
     animation-delay: .7s;
@@ -188,13 +194,16 @@ body
     animation: slideTop 1s ease forwards;
     animation-delay: .7s;
 }
+body {
+    overflow-x: hidden;
+}
 .home-content h3 span {
     color: #d4af37;
 }
 .home-content h1 {
     color: #e8e6e1;
-    font-size: 36px;
-    line-height: 1.2;
+    font-size: 28px;
+    line-height: 1.3;
     font-weight: 700;
     margin: 15px 0;
     opacity: 0;
