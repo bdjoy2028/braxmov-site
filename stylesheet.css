@@ -177,6 +177,7 @@ body
 }
 .home-content {
     max-width : 600px;
+    padding-top: 130px;
 }
 .home-content h3 {
     color: #e8e6e1;
