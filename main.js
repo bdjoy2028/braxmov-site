@@ -1,4 +1,4 @@
-var typed= new Typed(".text", {strings:["Selling just Sqft" , "Being Basic" , "Validating Corporate Giants"],
+var typed= new Typed(".text", {strings:["Selling just Sqft" , "The Basic Listings" , "Validating Corporate Firms"],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
