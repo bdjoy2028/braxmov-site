@@ -263,6 +263,7 @@ body {
   max-width: 10ch;
   font-size: clamp(2rem, 4vw, 3.1rem);
   line-height: 1.05;
+  color: #d7a91e;
 }
 
 .hero-description,
