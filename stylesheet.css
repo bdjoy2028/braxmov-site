@@ -1093,3 +1093,11 @@ body {
     font-size: 3rem;
   }
 }
+.home-content .campaign-title {
+    color: #ffffff;
+    -webkit-text-fill-color: #ffffff;
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    opacity: 1;
+}
