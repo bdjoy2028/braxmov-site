@@ -1101,3 +1101,30 @@ body {
     background-clip: initial;
     opacity: 1;
 }
+.home-sci .sci {
+    width: 46px;
+    height: 46px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #ffd700;
+    border-radius: 50%;
+    color: #ffd700;
+    text-decoration: none;
+}
+
+.home-sci .sci i {
+    display: inline-block;
+    color: #ffd700;
+    font-size: 24px;
+    line-height: 1;
+    opacity: 1;
+}
+
+.home-sci .sci:hover {
+    background: #ffd700;
+}
+
+.home-sci .sci:hover i {
+    color: #111;
+}
