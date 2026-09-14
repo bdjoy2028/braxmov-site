@@ -79,9 +79,9 @@
 </div>
 
     <div class="hero-buttons">
-      <a href="#contact" class="btn">Get Your Campaign Bible</a>
-      <a href="https://calendly.com/braxton-braxmov/30min" target="_blank" class="btn">
-        Reserve Your Intake Day
+      <a href="#contact" class="btn">Send Message</a>
+      <a href="#start-campaign" target="_blank" class="btn">
+        Build My Campaign
       </a>
     </div>
   </div>
@@ -188,7 +188,7 @@
                         The strategy built for you. The campaign is yours to run. 
                     </p>
 
-                    <a href="#contact" target="_blank" class="btn">Build My Campaign
+                    <a href="#start-campaign" target="_blank" class="btn">Build My Campaign
                     </a>
 
                 </article>
@@ -223,7 +223,7 @@
                         I build the strategy, then help you put what's inside your Campaign Bible to work. 
                     </p>
 
-                    <a href="https://calendly.com/braxton-braxmov/30min" target="_blank" class="btn">Build It With Me</a>
+                    <a href="#start-campaign" target="_blank" class="btn">Build My Campaign</a>
                 
                 </article>
                 </div>
@@ -585,22 +585,172 @@
         </div>
     </section>
 
+    <!-- START YOUR CAMPAIGN -->
+<section
+    class="contact-section campaign-checkout-section"
+    id="start-campaign"
+    data-aos="fade-up"
+    data-aos-duration="800"
+>
+    <div class="contact-wrapper">
+
+        <h2>
+            <span>Ready To </span>Start Your Campaign?
+        </h2>
+
+        <p>
+            Tell me what you're trying to market and give me the context I need
+            to start thinking. Once your intake is submitted, you'll continue
+            to secure checkout.
+        </p>
+
+        <div class="campaign-price-line">
+            <span>Custom Campaign Bible</span>
+            <strong>$499</strong>
+            <small>One-time payment</small>
+        </div>
+
+        <form
+            id="campaign-intake-form"
+            action="https://formspree.io/f/xldnrbpb"
+            method="POST"
+            class="contact-form"
+        >
+
+            <!-- Spam protection -->
+            <input
+                type="text"
+                name="_gotcha"
+                style="display:none"
+                tabindex="-1"
+                autocomplete="off"
+            >
+
+            <!-- Helps identify this submission -->
+            <input
+                type="hidden"
+                name="form_type"
+                value="Campaign Bible Intake"
+            >
+
+            <div class="campaign-package-choice">
+
+    <label class="package-option">
+        <input
+            type="radio"
+            name="package"
+            value="campaign-bible"
+            required
+            checked
+        >
+
+        <div>
+            <span>Campaign Bible</span>
+            <strong>$499</strong>
+            <small>
+                The complete custom campaign strategy.
+                You execute it yourself.
+            </small>
+        </div>
+    </label>
+
+
+    <label class="package-option">
+        <input
+            type="radio"
+            name="package"
+            value="guided-launch"
+            required
+        >
+
+        <div>
+            <span>Guided Launch</span>
+            <strong>$999</strong>
+            <small>
+                Your Campaign Bible plus direct guidance
+                putting the strategy into motion.
+            </small>
+        </div>
+    </label>
+
+</div>
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+            >
+
+            <input
+                type="text"
+                name="business"
+                placeholder="Business / Brand"
+                required
+            >
+
+            <input
+                type="url"
+                name="website"
+                placeholder="Website or Product Link"
+                required
+            >
+
+            <textarea
+                name="campaign_focus"
+                rows="5"
+                placeholder="What do you want your Campaign Bible built around?"
+                required
+            ></textarea>
+
+            <textarea
+                name="additional_context"
+                rows="4"
+                placeholder="Anything else I should know? (Optional)"
+            ></textarea>
+
+            <button type="submit" id="campaign-submit-btn">
+    Continue To Secure Checkout — $499
+        </button>
+
+        </form>
+
+        <div
+            id="campaign-form-status"
+            style="display:none; margin-top:20px;"
+        ></div>
+
+        <p class="secure-checkout-note">
+            Secure payment powered by Stripe.
+        </p>
+
+    </div>
+</section>
+
     <section class="contact-section" id="contact" data-aos="fade-up" data-aos-duration="800">
         <div class="contact-wrapper">
-            <h2><span>What Are You Trying to </span>Launch, Relaunch, or Sell?⁠</h2>
+            <h2><span>Have A </span>Question?⁠</h2>
             <p>Tell me what you’re working on.
-                Send your business, product, property, offer, or website and give me a little context around what you want the campaign to accomplish.
-                If BraxMov is a fit, we’ll build from there.
+                  Not ready to start yet? Have a question about the Campaign Bible,
+                    Guided Launch, or something outside the standard offer?
+                    Send me a message.
             </p>
             
             <form action="https://formspree.io/f/xldnrbpb" method="post" class="contact-form">
                 <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
-                <input type="email" name="email" placeholder="Business / Brand" required>
-                <input type="email" name="email" placeholder="Website or Product Link" required>
+                <input type="text" name="business" placeholder="Business / Brand" required>
+                <input type="url" name="website" placeholder="Website or Product Link">
                 <textarea name="message" rows="5" placeholder="What are you trying to launch, relaunch, or improve?⁠" required></textarea>
-                <button type="submit">Start My Campaign⁠</button>
+                <button type="submit">Send Message⁠</button>
             </form>
             <div id="form-success" style="display:none; color: #e8e6e1; margin-top: 20px;">
                 <p>Thank you! Your message has been sent successfully.</p>
@@ -612,5 +762,92 @@
     <script>AOS.init();</script>
     <script src="https://unpkg.com/typed.js@2.0.12"></script>
     <script src="main.js"></script>
+    <script>
+    const campaignForm = document.getElementById("campaign-intake-form");
+    const campaignStatus = document.getElementById("campaign-form-status");
+    const campaignSubmitButton = document.getElementById("campaign-submit-btn");
+    const packageOptions = document.querySelectorAll('input[name="package"]');
+
+    const stripeLinks = {
+        "campaign-bible": "https://buy.stripe.com/14AbJ10uw94v3X41u6dAk02",
+        "guided-launch": "https://buy.stripe.com/4gM9AT5OQbcDgJQfkWdAk03"
+    };
+
+
+    // Change checkout button based on selected package
+    packageOptions.forEach(option => {
+        option.addEventListener("change", function () {
+
+            if (this.value === "guided-launch") {
+                campaignSubmitButton.textContent =
+                    "Continue To Secure Checkout — $999";
+            } else {
+                campaignSubmitButton.textContent =
+                    "Continue To Secure Checkout — $499";
+            }
+
+        });
+    });
+
+
+    campaignForm.addEventListener("submit", async function (event) {
+
+        event.preventDefault();
+
+        const selectedPackage =
+            document.querySelector('input[name="package"]:checked');
+
+        if (!selectedPackage) {
+            return;
+        }
+
+        const originalButtonText = campaignSubmitButton.textContent;
+
+        campaignSubmitButton.disabled = true;
+        campaignSubmitButton.textContent = "Submitting...";
+
+        const formData = new FormData(campaignForm);
+
+        try {
+
+            const response = await fetch(campaignForm.action, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
+            if (response.ok) {
+
+                campaignStatus.style.display = "block";
+                campaignStatus.style.color = "#f5c400";
+                campaignStatus.textContent =
+                    "Intake received. Taking you to secure checkout...";
+
+                const checkoutURL =
+                    stripeLinks[selectedPackage.value];
+
+                setTimeout(() => {
+                    window.location.href = checkoutURL;
+                }, 800);
+
+            } else {
+                throw new Error("Form submission failed.");
+            }
+
+        } catch (error) {
+
+            campaignStatus.style.display = "block";
+            campaignStatus.style.color = "#ff6b6b";
+            campaignStatus.textContent =
+                "Something went wrong. Please try again.";
+
+            campaignSubmitButton.disabled = false;
+            campaignSubmitButton.textContent = originalButtonText;
+        }
+
+    });
+</script>
 </body>
 </html>
