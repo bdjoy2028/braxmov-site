@@ -1,4 +1,4 @@
-var typed= new Typed(".text", {strings:["BLENDING IN" , "OVERPAYING FOR MARKETING" , "MARKETING WITHOUT A PLAN"],
+var typed= new Typed(".text", {strings:["OVERLOADING YOUR CREATIVE TEAM" , "FORCING EVERY CAMPAIGN IN-HOUSE" , "LETTING GOOD CLIENT WORK GO GENERIC"],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
