@@ -32,3 +32,8 @@ const navbarLinks = document.querySelector('.navbar');
 hamburgerBtn.addEventListener('click', () => {
     navbarLinks.classList.toggle('active');
 });
+document.querySelectorAll(".navbar a").forEach(link => {
+    link.addEventListener("click", () => {
+        navbar.classList.remove("active");
+    });
+});
