@@ -1,4 +1,4 @@
-var typed= new Typed(".text", {strings:["OVERLOADING YOUR CREATIVE TEAM" , "FORCING EVERY CAMPAIGN IN-HOUSE" , "LETTING GOOD CLIENT WORK GO GENERIC"],
+var typed= new Typed(".text", {strings:["REPEATING THE SAME TRAINING" , "LETTING KNOWLEDGE LIVE IN PEOPLE'S HEADS" , "MAKING CUSTOMERS FIGURE IT OUT THEMSELVES"],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
