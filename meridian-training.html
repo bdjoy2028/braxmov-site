@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Meridian Customer Support Training | BraxMov</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top right, #3b190c 0%, transparent 28%),
+        #090909;
+      color: #fff;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .training-shell {
+      width: min(1000px, 92%);
+      margin: 0 auto;
+      padding: 60px 0;
+    }
+
+    .back-link {
+      display: inline-block;
+      color: #bdbdbd;
+      text-decoration: none;
+      margin-bottom: 35px;
+      font-size: 0.9rem;
+    }
+
+    .back-link:hover {
+      color: #fff;
+    }
+
+    .training-header {
+      margin-bottom: 35px;
+    }
+
+    .training-kicker {
+      color: #ff7a32;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.72rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .training-header h1 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1.05;
+      max-width: 800px;
+      margin-bottom: 15px;
+    }
+
+    .training-header p {
+      max-width: 720px;
+      color: #bdbdbd;
+    }
+
+    .spec-label {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 7px 12px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 999px;
+      font-size: .72rem;
+      color: #aaa;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .training-card {
+      background: rgba(255,255,255,.045);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,.35);
+    }
+
+    .progress-area {
+      padding: 24px 30px;
+      border-bottom: 1px solid rgba(255,255,255,.09);
+    }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 12px;
+      color: #a9a9a9;
+      font-size: .85rem;
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 7px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      width: 20%;
+      height: 100%;
+      background: #ff7a32;
+      transition: width .35s ease;
+    }
+
+    .scenario-area {
+      padding: clamp(28px, 5vw, 55px);
+    }
+
+    .scenario-number {
+      color: #ff7a32;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .scenario-title {
+      font-size: clamp(1.5rem, 4vw, 2.6rem);
+      margin-bottom: 25px;
+    }
+
+    .customer-message {
+      background: #151515;
+      border-left: 4px solid #ff7a32;
+      border-radius: 10px;
+      padding: 22px;
+      margin-bottom: 30px;
+      color: #e7e7e7;
+      font-size: 1.05rem;
+    }
+
+    .question {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .answers {
+      display: grid;
+      gap: 12px;
+    }
+
+    .answer-button {
+      width: 100%;
+      text-align: left;
+      border: 1px solid rgba(255,255,255,.13);
+      background: rgba(255,255,255,.035);
+      color: #fff;
+      padding: 17px 18px;
+      border-radius: 11px;
+      cursor: pointer;
+      font-size: .98rem;
+      transition: .2s ease;
+    }
+
+    .answer-button:hover:not(:disabled) {
+      border-color: #ff7a32;
+      background: rgba(255,122,50,.08);
+      transform: translateY(-1px);
+    }
+
+    .answer-button:disabled {
+      cursor: default;
+    }
+
+    .answer-button.correct {
+      border-color: #59c785;
+      background: rgba(89,199,133,.1);
+    }
+
+    .answer-button.incorrect {
+      border-color: #ff6767;
+      background: rgba(255,103,103,.09);
+    }
+
+    .feedback {
+      display: none;
+      margin-top: 25px;
+      padding: 20px;
+      border-radius: 12px;
+      background: #151515;
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    .feedback.show {
+      display: block;
+    }
+
+    .feedback h3 {
+      margin-bottom: 8px;
+    }
+
+    .feedback.correct-feedback h3 {
+      color: #59c785;
+    }
+
+    .feedback.incorrect-feedback h3 {
+      color: #ff7777;
+    }
+
+    .feedback p {
+      color: #c7c7c7;
+    }
+
+    .next-button,
+    .restart-button,
+    .sop-button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 13px 20px;
+      border-radius: 9px;
+      border: 0;
+      text-decoration: none;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .next-button,
+    .restart-button {
+      background: #ff7a32;
+      color: #111;
+    }
+
+    .next-button:hover,
+    .restart-button:hover {
+      transform: translateY(-2px);
+    }
+
+    .sop-button {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.2);
+      margin-left: 10px;
+    }
+
+    .completion {
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    .completion-score {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 800;
+      color: #ff7a32;
+      line-height: 1;
+      margin: 20px 0;
+    }
+
+    .completion p {
+      color: #bdbdbd;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 600px) {
+      .training-shell {
+        padding: 35px 0;
+      }
+
+      .progress-area {
+        padding: 20px;
+      }
+
+      .sop-button {
+        display: block;
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="training-shell">
+
+    <a href="index.html#portfolio" class="back-link">
+      ← Back to Portfolio
+    </a>
+
+    <header class="training-header">
+      <p class="training-kicker">BraxMov Learning</p>
+
+      <h1>Handling Customer Billing Escalations</h1>
+
+      <p>
+        Practice applying Meridian's support workflow to realistic customer
+        situations involving duplicate charges, repeat contacts, refunds,
+        escalation decisions, and documentation.
+      </p>
+
+      <span class="spec-label">
+        Spec Learning Project / Portfolio Demonstration
+      </span>
+    </header>
+
+
+    <section class="training-card">
+
+      <div class="progress-area">
+
+        <div class="progress-meta">
+          <span id="questionCounter">Scenario 1 of 5</span>
+          <span id="scoreDisplay">Score: 0</span>
+        </div>
+
+        <div class="progress-track">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+      </div>
+
+
+      <div class="scenario-area" id="scenarioArea">
+
+        <!-- JavaScript inserts scenario here -->
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+<script>
+
+const scenarios = [
+
+  {
+    title: "The Duplicate Charge",
+    customer:
+      `"I was charged twice. I already talked to somebody yesterday, and if this isn't fixed today I'm cancelling."`,
+
+    question:
+      "What should you do first?",
+
+    answers: [
+      "Immediately issue a refund for the second charge.",
+      "Verify both transactions and acknowledge the customer's previous contact.",
+      "Transfer the customer directly to a supervisor.",
+      "Explain that duplicate-looking charges normally disappear on their own."
+    ],
+
+    correct: 1,
+
+    feedback:
+      "Before issuing a refund, verify whether both charges actually settled. A pending authorization can sometimes appear to be a duplicate. Acknowledging the previous contact also prevents the customer from feeling as though they are starting over."
+  },
+
+
+  {
+    title: "Pending or Settled?",
+    customer:
+      `"I checked my bank again. One charge says completed. The other still says pending."`,
+
+    question:
+      "What is the best next action?",
+
+    answers: [
+      "Refund the pending transaction immediately.",
+      "Tell the customer there is nothing support can do.",
+      "Explain the difference between a pending authorization and a settled duplicate, then continue monitoring the transaction.",
+      "Escalate the issue to Tier 2 immediately."
+    ],
+
+    correct: 2,
+
+    feedback:
+      "A pending authorization is not the same as a completed duplicate charge. The employee should explain that distinction clearly before initiating a refund or unnecessary escalation."
+  },
+
+
+  {
+    title: "A Confirmed Duplicate",
+    customer:
+      `"Both charges now show as completed, and the transaction IDs are different."`,
+
+    question:
+      "What should happen next?",
+
+    answers: [
+      "Process the appropriate refund according to policy and explain the expected timeline.",
+      "Ask the customer to dispute the charge through their bank.",
+      "Wait another seven days before taking action.",
+      "Close the ticket because the customer has already contacted support."
+    ],
+
+    correct: 0,
+
+    feedback:
+      "Once the duplicate is confirmed, support should follow the approved refund process, communicate what will happen next, and set realistic expectations for the customer."
+  },
+
+
+  {
+    title: "Authorization Limit",
+    customer:
+      `"The duplicate transaction is $425. Your standard refund authority covers transactions up to $250."`,
+
+    question:
+      "What is the correct decision?",
+
+    answers: [
+      "Split the refund into two smaller transactions.",
+      "Issue the full refund anyway because the mistake is obvious.",
+      "Escalate for supervisor authorization before processing the refund.",
+      "Tell the customer that transactions above $250 cannot be refunded."
+    ],
+
+    correct: 2,
+
+    feedback:
+      "The correct resolution still requires following authorization limits. Escalation is appropriate here because the refund exceeds the employee's authority, not because the employee failed to investigate the problem."
+  },
+
+
+  {
+    title: "Close the Loop",
+    customer:
+      `"Thanks. The supervisor approved the refund. What happens now?"`,
+
+    question:
+      "Which response completes the workflow most effectively?",
+
+    answers: [
+      "Tell the customer the refund was approved and end the conversation.",
+      "Explain the resolution and expected timeline, document the case, and confirm whether the customer needs anything else.",
+      "Transfer the customer back to the previous representative.",
+      "Wait until the refund reaches the customer's bank before documenting anything."
+    ],
+
+    correct: 1,
+
+    feedback:
+      "Resolution includes more than fixing the transaction. The employee should communicate the outcome, set expectations, document what happened, and make sure the customer understands the next step."
+  }
+
+];
+
+
+let currentScenario = 0;
+let score = 0;
+let answered = false;
+
+const scenarioArea = document.getElementById("scenarioArea");
+const questionCounter = document.getElementById("questionCounter");
+const scoreDisplay = document.getElementById("scoreDisplay");
+const progressBar = document.getElementById("progressBar");
+
+
+function loadScenario() {
+
+  answered = false;
+
+  const scenario = scenarios[currentScenario];
+
+  questionCounter.textContent =
+    `Scenario ${currentScenario + 1} of ${scenarios.length}`;
+
+  scoreDisplay.textContent = `Score: ${score}`;
+
+  progressBar.style.width =
+    `${((currentScenario + 1) / scenarios.length) * 100}%`;
+
+
+  scenarioArea.innerHTML = `
+
+    <p class="scenario-number">
+      Scenario ${String(currentScenario + 1).padStart(2, "0")}
+    </p>
+
+    <h2 class="scenario-title">
+      ${scenario.title}
+    </h2>
+
+    <div class="customer-message">
+      ${scenario.customer}
+    </div>
+
+    <p class="question">
+      ${scenario.question}
+    </p>
+
+    <div class="answers">
+
+      ${scenario.answers.map((answer, index) => `
+
+        <button
+          class="answer-button"
+          onclick="selectAnswer(${index}, this)"
+        >
+          <strong>${String.fromCharCode(65 + index)}.</strong>
+          ${answer}
+        </button>
+
+      `).join("")}
+
+    </div>
+
+    <div class="feedback" id="feedbackBox">
+
+      <h3 id="feedbackHeading"></h3>
+
+      <p id="feedbackText"></p>
+
+      <button
+        class="next-button"
+        id="nextButton"
+        onclick="nextScenario()"
+      >
+        ${currentScenario === scenarios.length - 1
+          ? "See Results"
+          : "Continue →"}
+      </button>
+
+    </div>
+
+  `;
+}
+
+
+function selectAnswer(selectedIndex, button) {
+
+  if (answered) return;
+
+  answered = true;
+
+  const scenario = scenarios[currentScenario];
+  const buttons = document.querySelectorAll(".answer-button");
+
+  buttons.forEach(btn => btn.disabled = true);
+
+  const feedbackBox =
+    document.getElementById("feedbackBox");
+
+  const feedbackHeading =
+    document.getElementById("feedbackHeading");
+
+  const feedbackText =
+    document.getElementById("feedbackText");
+
+
+  if (selectedIndex === scenario.correct) {
+
+    score++;
+
+    button.classList.add("correct");
+
+    feedbackHeading.textContent =
+      "Correct decision";
+
+    feedbackBox.classList.add(
+      "show",
+      "correct-feedback"
+    );
+
+  } else {
+
+    button.classList.add("incorrect");
+
+    buttons[scenario.correct].classList.add("correct");
+
+    feedbackHeading.textContent =
+      "Not quite";
+
+    feedbackBox.classList.add(
+      "show",
+      "incorrect-feedback"
+    );
+  }
+
+
+  feedbackText.textContent =
+    scenario.feedback;
+
+  scoreDisplay.textContent =
+    `Score: ${score}`;
+}
+
+
+function nextScenario() {
+
+  currentScenario++;
+
+  if (currentScenario < scenarios.length) {
+
+    loadScenario();
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  } else {
+
+    showCompletion();
+
+  }
+}
+
+
+function showCompletion() {
+
+  questionCounter.textContent =
+    "Training Complete";
+
+  progressBar.style.width = "100%";
+
+
+  let message;
+
+  if (score === 5) {
+
+    message =
+      "Excellent. You applied the Meridian escalation workflow correctly across every customer situation.";
+
+  } else if (score >= 4) {
+
+    message =
+      "Strong performance. You demonstrated a solid understanding of the escalation workflow.";
+
+  } else {
+
+    message =
+      "You completed the scenario. Review the SOP and try again to strengthen your decision-making.";
+
+  }
+
+
+  scenarioArea.innerHTML = `
+
+    <div class="completion">
+
+      <p class="scenario-number">
+        Scenario Complete
+      </p>
+
+      <h2 class="scenario-title">
+        Customer Escalation Training Complete
+      </h2>
+
+      <div class="completion-score">
+        ${score}/5
+      </div>
+
+      <p>
+        ${message}
+      </p>
+
+      <button
+        class="restart-button"
+        onclick="restartTraining()"
+      >
+        Restart Scenario
+      </button>
+
+      <a
+        href="artifacts/Meridian_Billing_Escalation_SOP.pdf"
+        target="_blank"
+        class="sop-button"
+      >
+        Review SOP
+      </a>
+
+    </div>
+
+  `;
+}
+
+
+function restartTraining() {
+
+  currentScenario = 0;
+  score = 0;
+  answered = false;
+
+  loadScenario();
+}
+
+
+loadScenario();
+
+</script>
+
+</body>
+</html>

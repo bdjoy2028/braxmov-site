@@ -1878,3 +1878,564 @@ body {
     transform: none;
     margin: 0;
 }
+.learning-portfolio {
+    width: 100%;
+    margin: 40px auto 80px;
+}
+
+.portfolio-section-heading,
+.portfolio-divider {
+    margin-bottom: 35px;
+}
+
+.portfolio-kicker {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 8px;
+}
+
+.portfolio-section-heading h3,
+.portfolio-divider h3 {
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    margin-bottom: 12px;
+}
+
+.portfolio-section-heading > p:last-child,
+.portfolio-divider > p:last-child {
+    max-width: 750px;
+    line-height: 1.7;
+    opacity: 0.8;
+}
+
+.learning-project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.learning-project-card {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.learning-project-image {
+    width: 100%;
+    overflow: hidden;
+    background: #111;
+}
+
+.learning-project-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s ease;
+}
+
+.learning-project-card:hover .learning-project-image img {
+    transform: scale(1.015);
+}
+
+.learning-project-content {
+    padding: 28px;
+}
+
+.project-type {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    opacity: 0.65;
+}
+
+.learning-project-content h3 {
+    font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+    margin-bottom: 8px;
+}
+
+.spec-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.55;
+    margin-bottom: 18px;
+}
+
+.learning-project-content > p {
+    line-height: 1.7;
+}
+
+.learning-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 24px 0;
+}
+
+.learning-tags li {
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 0.8rem;
+}
+
+.learning-project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.portfolio-button {
+    display: inline-block;
+    padding: 12px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s ease;
+    background: #ffffff;
+    color: #111111;
+}
+
+.portfolio-button:hover {
+    transform: translateY(-2px);
+    opacity: 0.88;
+}
+
+.portfolio-button-secondary {
+    background: transparent;
+    color: inherit;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.portfolio-divider {
+    padding-top: 70px;
+    margin-top: 80px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+/* DESKTOP */
+@media (min-width: 900px) {
+
+    .learning-project-card {
+        display: grid;
+        grid-template-columns: 1.25fr 1fr;
+        align-items: center;
+    }
+
+    .learning-project-card:nth-child(even) {
+        grid-template-columns: 1fr 1.25fr;
+    }
+
+    .learning-project-card:nth-child(even) .learning-project-image {
+        order: 2;
+    }
+
+    .learning-project-card:nth-child(even) .learning-project-content {
+        order: 1;
+    }
+
+}
+.launch-scenario-btn {
+    display: inline-block;
+    background: #ffd400;
+    color: #111;
+    padding: 18px 28px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid #ffd400;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.launch-scenario-btn:hover {
+    background: transparent;
+    color: #ffd400;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 212, 0, 0.25);
+}
+/* =========================================
+   NAVBAR FIX
+========================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* MAIN NAV CONTAINER */
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 4%;
+
+    box-sizing: border-box;
+
+    /* keeps navbar above page content */
+    position: relative;
+    z-index: 1000;
+}
+
+
+/* NAV LINK CONTAINER */
+.navbar ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: clamp(14px, 2vw, 32px);
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    flex-wrap: nowrap;
+}
+
+
+/* INDIVIDUAL NAV ITEMS */
+.navbar ul li {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* NAV LINKS */
+.navbar ul li a {
+    display: inline-block;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: clamp(0.78rem, 1vw, 1rem);
+    font-weight: 500;
+
+    /* THIS STOPS:
+       Learning
+       Portfolio
+
+       from breaking into two lines
+    */
+    white-space: nowrap;
+
+    transition: all 0.25s ease;
+}
+
+
+/* HOVER EFFECT */
+.navbar ul li a:hover {
+    color: #ffd400;
+}
+
+
+/* OPTIONAL ACTIVE / EMPHASIS EFFECT */
+.navbar ul li a:focus {
+    color: #ffd400;
+}
+
+
+/* =========================================
+   SECTION SCROLL FIX
+========================================= */
+
+#learning-portfolio,
+#portfolio,
+#about,
+#contact,
+#how-it-works,
+#gods-abolish-their-shackles {
+    scroll-margin-top: 110px;
+}
+
+
+/* =========================================
+   SMALLER LAPTOPS
+========================================= */
+
+@media (max-width: 1200px) {
+
+    .navbar {
+        padding-left: 2.5%;
+        padding-right: 2.5%;
+    }
+
+    .navbar ul {
+        gap: 16px;
+    }
+
+    .navbar ul li a {
+        font-size: 0.82rem;
+    }
+
+}
+
+
+/* =========================================
+   TABLETS / NARROW WINDOWS
+========================================= */
+
+@media (max-width: 950px) {
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .navbar ul {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 14px 20px;
+    }
+
+    .navbar ul li a {
+        font-size: 0.82rem;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 16px 18px;
+    }
+
+    .navbar ul {
+        gap: 12px 16px;
+    }
+
+    .navbar ul li a {
+        font-size: 0.76rem;
+    }
+
+}
+/* =========================================
+   FINAL NAVBAR OVERFLOW FIX
+========================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.navbar {
+    width: 100%;
+    max-width: 100vw;
+    padding: 18px 24px !important;
+    overflow: visible;
+}
+
+.navbar ul {
+    width: 100%;
+    max-width: 100%;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px 22px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    list-style: none;
+}
+
+.navbar ul li {
+    margin: 0 !important;
+    padding: 0 !important;
+    flex-shrink: 1;
+}
+
+.navbar ul li a {
+    display: block;
+
+    margin: 0 !important;
+    padding: 8px 5px !important;
+
+    font-size: 14px !important;
+    line-height: 1.1;
+
+    white-space: nowrap !important;
+
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/* Medium-size screens:
+   let the nav become two clean rows instead of
+   pushing Contact off-screen
+*/
+@media (max-width: 1100px) {
+
+    .navbar ul {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px 22px !important;
+    }
+
+    .navbar ul li a {
+        font-size: 13px !important;
+    }
+}
+
+
+/* Mobile */
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 14px 12px !important;
+    }
+
+    .navbar ul {
+        flex-wrap: wrap !important;
+        gap: 6px 14px !important;
+    }
+
+    .navbar ul li a {
+        font-size: 12px !important;
+    }
+}
+/* =========================================
+   HARD NAVBAR OVERFLOW FIX
+========================================= */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Force the entire navigation inside the screen */
+nav {
+    width: 100% !important;
+    max-width: 100vw !important;
+
+    left: 0 !important;
+    right: 0 !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+
+    box-sizing: border-box !important;
+
+    transform: none !important;
+}
+
+/* Force the link container to stay inside nav */
+nav ul {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    display: flex !important;
+    flex-wrap: wrap !important;
+
+    justify-content: center !important;
+    align-items: center !important;
+
+    gap: 12px 24px !important;
+
+    padding: 0 !important;
+    margin: 0 auto !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Remove any old spacing/fixed widths */
+nav ul li {
+    width: auto !important;
+    min-width: 0 !important;
+
+    flex: 0 0 auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Keep each individual nav title together */
+nav ul li a {
+    display: block !important;
+
+    width: auto !important;
+
+    margin: 0 !important;
+    padding: 8px 4px !important;
+
+    font-size: 14px !important;
+    line-height: 1.1 !important;
+
+    white-space: nowrap !important;
+
+    text-align: center !important;
+}
+
+
+/* If the browser window gets tighter,
+   intentionally use two rows */
+@media (max-width: 1100px) {
+
+    nav ul {
+        gap: 8px 18px !important;
+    }
+
+    nav ul li a {
+        font-size: 13px !important;
+    }
+}
+
+
+/* Smaller screens */
+@media (max-width: 750px) {
+
+    nav {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    nav ul {
+        gap: 6px 14px !important;
+    }
+
+    nav ul li a {
+        font-size: 12px !important;
+    }
+}
+nav ul {
+    gap: 16px !important;
+}
+
+nav ul li a {
+    font-size: 12px !important;
+    white-space: nowrap !important;
+}
