@@ -5,26 +5,50 @@ var typed= new Typed(".text", {strings:["REPEATING THE SAME TRAINING" , "LETTING
     loop: true,
 });
 
-document.querySelector(".contact-form").addEventListener("submit", function (e) {
-    const successMessage = document.getElementById("form-success");
+const contactForm = document.querySelector(
+  'form.contact-form:not(#campaign-intake-form)'
+);
 
-    fetch(FormData.action, {
+if (contactForm) {
+  contactForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+    const successMessage =
+      document.getElementById("form-success");
+
+    try {
+      const response = await fetch(form.action, {
         method: "POST",
         body: new FormData(form),
         headers: {
-            "Accept": "application/json"
+          Accept: "application/json"
         }
-    }).then(response => {
-        if (response.ok) {
-            successMessage.style.display = "block";
-            form.reset();
-        } else {
-            successMessage.style.display = "#e8e6e1";
-            successMessage.innerText = "There was a problem with your submission. Please try again.";
-            successMessage.style.display = "block";
-        }
-    });
-});
+      });
+
+      if (!response.ok) {
+        throw new Error(`Submission failed: ${response.status}`);
+      }
+
+      if (successMessage) {
+        successMessage.style.display = "block";
+        successMessage.textContent =
+          "Thank you! Your message has been sent successfully.";
+      }
+
+      form.reset();
+    } catch (error) {
+      console.error("Contact form error:", error);
+
+      if (successMessage) {
+        successMessage.style.display = "block";
+        successMessage.textContent =
+          "There was a problem sending your message. Please try again.";
+      }
+    }
+  });
+}
+
 
 const hamburgerBtn = document.getElementById('hamburger-btn');
 const navbarLinks = document.querySelector('.navbar');
