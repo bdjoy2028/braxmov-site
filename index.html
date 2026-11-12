@@ -814,21 +814,21 @@ Learning. Enablement. Creative.
         </p>
 
         <div class="campaign-price-line">
-    <span>BraxMov Learning </span>
-    <strong>Starting at $2,000</strong>
-    <small>Turn company knowledge into employee training people can reuse.</small>
+    <span>Training Guide</span>
+    <strong>Starting at $500</strong>
+    <small>Turn your knowledge into clear, professional step-by-step guides, tutorials, and instructional PDFs.</small>
 </div>
 
 <div class="campaign-price-line">
-    <span>BraxMov Enablement</span>
-    <strong>Starting at $2,000</strong>
-    <small>Turn product knowledge into onboarding, walkthroughs, and customer education.</small>
-</div>
-
-<div class="campaign-price-line">
-    <span>BraxMov Creative</span>
+    <span>Training Video</span>
     <strong>Starting at $1,000</strong>
-    <small>Standalone storytelling, video production, editing, and creative direction.</small>
+    <small>Bring your knowledge to life with engaging instructional videos that demonstrate skills, products, and processes.</small>
+</div>
+
+<div class="campaign-price-line">
+    <span>Mini-Course</span>
+    <strong>Starting at $2,000</strong>
+    <small>Transform your expertise into structured online lessons, complete with helpful resources and knowledge checks.</small>
 </div>
 
         <form
@@ -865,14 +865,16 @@ Learning. Enablement. Creative.
             checked
         >
 
-        <div>
-            <span>BraxMov Learning</span>
-            <strong>Starting at $2,000</strong>
-            <small>
-            Employee onboarding, training modules, software walkthroughs, SOPs, documentation, and reusable learning systems.
-            </small>
-        </div>
-    </label>
+     <div>
+    <span>Training Guide</span>
+    <strong>Starting at $500</strong>
+    <small>
+      Professional step-by-step guides, tutorials,
+      and instructional PDFs that make knowledge
+      easy to understand and follow.
+    </small>
+  </div>
+</label>
 
 
     <label class="package-option">
@@ -884,14 +886,15 @@ Learning. Enablement. Creative.
             checked
         >
         <div>
-            <span>BraxMov Enablement</span>
-            <strong>Starting at $2,000</strong>
-            <small>
-                Customer onboarding, product walkthroughs, tutorials, feature education, guides, and customer learning systems.
-            </small>
-        </div>
-    </label>
-
+    <span>Training Video</span>
+    <strong>Starting at $1,000</strong>
+    <small>
+      Clear, engaging instructional videos that
+      demonstrate a skill, process, or product
+      using client-provided materials.
+    </small>
+  </div>
+</label>
 
     <label class="package-option">
         <input
@@ -901,48 +904,13 @@ Learning. Enablement. Creative.
             required
         >
 
-        <div>
-            <span>BraxMov Creative</span>
-            <strong>Starting at $1,000</strong>
-            <small>
-                Video production, editing, storytelling, scriptwriting, creative direction, and selected visual projects.
-            </small>
-        </div>
-    </label>
-
-        <label class="package-option">
-  <input
-    type="radio"
-    name="package"
-    value="creative-jam"
-    required
-  >
-
-  <div>
-    <span>BraxMOV Creative Jam</span>
-    <strong>$50 | 45 Minutes</strong>
+    <div>
+    <span>Mini-Course</span>
+    <strong>Starting at $2,000</strong>
     <small>
-      A live creative collaboration to explore fresh ideas,
-      unexpected perspectives, and new possibilities
-      for your music, film, story, or creative project.
-    </small>
-  </div>
-</label>
-
-<label class="package-option">
-  <input
-    type="radio"
-    name="package"
-    value="creative-deep-dive"
-    required
-  >
-  <div>
-    <span> BraxMOV Creative Deep Dive</span>
-    <strong>$100 | 90 Minutes</strong>
-    <small>
-      Go deeper into your creative world. Explore concepts,
-      characters, sounds, visuals, and storytelling
-      possibilities through an extended collaboration.
+      Structured online learning experiences
+      with short lessons, helpful resources,
+      and knowledge checks.
     </small>
   </div>
 </label>
@@ -1042,21 +1010,17 @@ Learning. Enablement. Creative.
     const packageOptions = document.querySelectorAll('input[name="package"]');
 
     const stripeLinks = {
-        "customer-proof-pack": "https://buy.stripe.com/bJe3cv6SU80r3X4egSdAk08",
-        "campaign-bible": "https://buy.stripe.com/5kQ5kD5OQ3KbeBI8WydAk09",
-        "guided-launch": "https://buy.stripe.com/14A00jelm4Of2T02yadAk0a",
-        "creative-jam": "https://book.stripe.com/4gMdR9dhi3Kb79gc8KdAk0b",
-        "creative-deep-dive": "https://book.stripe.com/aFaeVdfpq0xZfFMdcOdAk0c"
+        "customer-proof-pack": "https://buy.stripe.com/00w14ngtu4Of9hoc8KdAk0d",
+        "campaign-bible": "https://buy.stripe.com/00w8wP7WY3Kb8dk4GidAk0e",
+        "guided-launch": "https://buy.stripe.com/9B600jdhia8zeBI6OqdAk0f"
     };
 
 
     // Change checkout button based on selected package
     const buttonLabels = {
-    "customer-proof-pack": "Continue To Secure Checkout - Starting at $2000",
-    "campaign-bible": "Continue To Secure Checkout - Starting at $2000",
-    "guided-launch": "Continue To Secure Checkout - Starting at $1000",
-    "creative-jam": "Book Creative Jam - $50",
-    "creative-deep-dive": "Book Creative Deep Dive - $100"
+    "customer-proof-pack": "Continue To Secure Checkout - Starting at $500",
+    "campaign-bible": "Continue To Secure Checkout - Starting at $1000",
+    "guided-launch": "Continue To Secure Checkout - Starting at $2000",
 };
 
 // Change checkout button based on selected package
